@@ -1,8 +1,5 @@
 import { toast } from "./toast.js"
-import { getLocalStorage } from "./localStorage.js"
 import { btnEventAcess } from "./btnEvents.js"
-
-
 
 const baseUrl = "http://localhost:3333/"
 
