@@ -138,6 +138,7 @@
     height: 38px;
     background-color: var(--brand100);
     color: var(--gray900);
+    cursor: pointer;
 }
 
 .div-2-section-2{
@@ -153,5 +154,31 @@
     width: 300px;
     height: 38px;
     background-color: var(--gray600);
-    border: solid 1px var(--gray500)
+    border: solid 1px var(--gray500);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.loading {
+    animation: spinner 5s infinite linear;
+    width: 21px;
+    height: 21px;
+}
+
+.user-appear{
+    display: flex;
+}
+
+@keyframes spinner {
+    0%{
+        transform: rotate(0);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
 }

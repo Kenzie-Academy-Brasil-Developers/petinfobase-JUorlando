@@ -1,4 +1,4 @@
-import { cadastro } from "./request.js";
+import { cadastro } from "./requestCadastro.js";
 
 const eventCadastro = () => {
 
