@@ -24,7 +24,7 @@ async function cadastro(body) {
 
             localStorage.setItem("userDados", JSON.stringify(response))
     
-            toastCadastro("Sua conta foi criada com sucesso!", "Agora você pode acessar os conteúdos utilizando seu usuário e senha na página de login:")
+            toastCadastro("Sua conta foi criada com sucesso!", "Redirecionando para página de Login.")
     
             setTimeout(() => {
     
