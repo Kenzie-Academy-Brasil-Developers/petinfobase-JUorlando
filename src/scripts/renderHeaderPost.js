@@ -9,7 +9,7 @@ export function renderHeader (elt) {
 
 }
 
-export function renderPosts (elt) {
+export async function renderPosts (elt) {
 
     
     elt.forEach(element => {
@@ -53,6 +53,11 @@ export function renderPosts (elt) {
         tagContent.innerText = element.content
         tagAcess.innerText = "Acessar Publicação"
         tagAcess.href = ""
+
+        tagContent.maxlength = "140"
+
+        tagTitle.name = "title"
+        tagContent.name = "content"
 
         
         tagDiv2.append(tagTitle, tagContent, tagAcess)

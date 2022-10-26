@@ -10,7 +10,7 @@ export function toastCadastro (title, message) {
 
     if(title == "Sucesso!"){
         container.classList.add("sucesstoast")
-        icon.src = "../src/img/sucess.png"
+        icon.src = "../../src/img/sucess.png"
     } 
 
     const textContainer = document.createElement("div")

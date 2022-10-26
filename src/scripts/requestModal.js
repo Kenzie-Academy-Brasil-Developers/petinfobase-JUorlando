@@ -1,13 +1,20 @@
+import { btnEventModal } from "./btnEventModal.js"
+import { getLocalStorage } from "./localStorage.js"
+import { toastModal } from "./toastModal.js"
+
 const baseUrl = "http://localhost:3333/"
 
 async function createPost(body){
+
+    const localStorage = getLocalStorage()
 
     try{
         const request = await fetch(baseUrl + "posts/" + "create", {
             method: "POST",
             headers:{
 
-                "Content-type": "application/json"
+                "Content-type": "application/json",
+                "Authorization": `Bearer ${localStorage.token}`
             },
             body: JSON.stringify(body)
         })
@@ -16,11 +23,9 @@ async function createPost(body){
 
             const response = await request.json()
     
-            toast("Sucesso!", "Post criado com sucesso!")
+            toastModal("Sucesso!", "Post criado com sucesso!")
 
-            btnEventAcess()
-
-            localStorage.setItem("userLogin", JSON.stringify(response))
+            btnEventModal()
 
             setTimeout(() => {
     

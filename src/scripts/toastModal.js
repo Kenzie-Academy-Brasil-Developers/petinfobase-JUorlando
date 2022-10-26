@@ -1,4 +1,4 @@
-export function toast (title, message) {
+export function toastModal (title, message) {
 
     const body = document.querySelector(".container")
 
@@ -10,7 +10,7 @@ export function toast (title, message) {
 
     if(title == "Sucesso!"){
         container.classList.add("sucesstoast")
-        icon.src = "../src/img/sucess.png"
+        icon.src = "../../src/img/sucess.png"
     } 
 
     const textContainer = document.createElement("div")

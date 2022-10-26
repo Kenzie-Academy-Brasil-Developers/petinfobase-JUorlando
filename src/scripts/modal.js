@@ -1,3 +1,4 @@
+
 export function criandoModalPost() {
 
     const navModal = document.querySelector(".app")
@@ -23,9 +24,9 @@ export function criandoModalPost() {
     tagClose.classList.add("close-modal")
     tagForm.classList.add("form-modal-inputs")
     tagLabel.classList.add("label-title")
-    tagInputTitle.classList.add("input-title")
+    tagInputTitle.classList.add("title")
     tagLabelContent.classList.add("content-label")
-    tagContent.classList.add("input-content")
+    tagContent.classList.add("content")
     tagForm2.classList.add("form-buttons-modal")
     tagButtonCancel.classList.add("button-modal-1")
     tagButtonPublic.classList.add("button-modal-2")
@@ -42,6 +43,9 @@ export function criandoModalPost() {
     tagInputTitle.type = "text"
     tagContent.type = "text"
 
+    tagInputTitle.name = "text"
+    tagContent.name = "content"
+
     tagButtonCancel.type = "button"
     tagButtonPublic.type = "button"
 
@@ -56,7 +60,7 @@ export function criandoModalPost() {
 
     buttonToggleModal.addEventListener("click", function () {
 
-        document.querySelector(".modal-container").classList.toggle("show-modal")
+        document.querySelector(".modal-container").classList.add("show-modal")
     })
 
     tagClose.addEventListener("click", function () {

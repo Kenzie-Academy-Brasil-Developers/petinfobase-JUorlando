@@ -1,4 +1,4 @@
-.modal-container{
+.modal-container-delete{
     position: fixed;
     top: 0;
     left: 0;
@@ -10,9 +10,9 @@
     justify-content: center;
 }
 
-.big-box{
+.big-box-delete{
     max-width: 800px;
-    min-width: 474px;
+    min-width: 302px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,7 +24,7 @@
     background-color: var(--gray900);
 }
 
-.div-modal{
+.div-modal-delete{
     width: 100%;
     height: 32px;
     display: flex;
@@ -32,13 +32,13 @@
     align-items: center;
 }
 
-.title-modal{
+.title-modal-delete{
 
     font-size: medium;
 
 }
 
-.close-modal{
+.close-modal-delete{
     width: 35px;
     height: 30px;
     background-color: var(--gray600);
@@ -48,7 +48,7 @@
     cursor: pointer;
 }
 
-.form-modal-inputs{
+.div-text-modal-delete{
     width: 744px;
     height: 275px;
     display: flex;
@@ -56,36 +56,20 @@
     gap: 11px;
 }
 
-.title{
-    width: 100%;
-    height: 43px;
-    background-color: var(--gray600);
-    color: var(--gray100);
-    padding-left: 10px;
-    border: solid 1px var(--gray600);
-    border-radius: 12px;
-}
+.title-delete{}
 
-.content{
-    width: 744px;
-    height: 120px;
-    background-color: var(--gray600);
-    color: var(--gray100);
-    padding-left: 10px;
-    border: solid 1px var(--gray600);
-    border-radius: 12px;
-}
+.text-delete{}
 
-.form-buttons-modal{
+.form-buttons-modal-delete{
     width: 100%;
     height: 50px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 12px;
 
 }
 
-.button-modal-1{
+.button-modal-1-delete{
     width: 105px;
     height: 38px;
     background-color: var(--gray600);
@@ -95,16 +79,16 @@
     cursor: pointer;
 }
 
-.button-modal-2{
+.button-modal-2-delete{
     width: 105px;
     height: 38px;
-    background-color: var(--brand100);
+    background-color: var(--alert100);
     color: var(--gray900);
-    border: solid 1px var(--brand100);
+    border: solid 1px var(--alert100);
     border-radius: 4px;
     cursor: pointer;
 }
 
-.show-modal{
+.show-modal-delete{
     display: flex;
 }
