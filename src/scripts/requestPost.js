@@ -1,5 +1,5 @@
 import { getLocalStorage } from "./localStorage.js"
-import { renderHeader } from "./renderHeaderPost.js"
+import { renderHeader } from "./renderPost.js"
 
 const baseUrl = "http://localhost:3333/"
 

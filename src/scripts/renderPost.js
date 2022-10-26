@@ -1,3 +1,5 @@
+import { editPost } from "./FormEditDelete.js";
+import { openModal } from "./modalEditDelete.js";
 import { getUsers } from "./requestPost.js";
 
 export function renderHeader (elt) {
@@ -59,6 +61,13 @@ export async function renderPosts (elt) {
         tagTitle.name = "title"
         tagContent.name = "content"
 
+        tagBtnEdit.addEventListener("click", (event) => {
+
+            event.preventDefault()
+
+            const formEdit = editPost(element)
+            openModal(formEdit)
+        })
         
         tagDiv2.append(tagTitle, tagContent, tagAcess)
         tagForm.append(tagBtnEdit, tagBtnDelete)

@@ -29,9 +29,11 @@ async function createPost(body){
 
             setTimeout(() => {
     
-                document.querySelector(".modal-container").classList.remove("show-modal")
-            }, 4000)
+                window.location.assign("../../pages/posts/posts.html")
 
+            }, 4000)
+            
+            return response
         } 
 
     } catch (err) {
@@ -40,5 +42,5 @@ async function createPost(body){
 }
 
 export {
-    createPost
+    createPost,
 }

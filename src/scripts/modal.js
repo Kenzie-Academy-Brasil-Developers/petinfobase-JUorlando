@@ -1,3 +1,4 @@
+import { renderPosts } from "./renderPost.js"
 
 export function criandoModalPost() {
 
@@ -74,3 +75,4 @@ export function criandoModalPost() {
     })
 
 }
+

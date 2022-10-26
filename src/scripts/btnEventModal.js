@@ -1,4 +1,4 @@
-import { renderPosts } from "./renderHeaderPost.js";
+import { renderPosts } from "./renderPost.js";
 import { createPost } from "./requestModal.js"
 
 export async function btnEventModal (){
@@ -8,7 +8,9 @@ export async function btnEventModal (){
     const inputTitle = document.querySelector(".title")
     const inputText = document.querySelector(".content")
     
-    btnModal.addEventListener("click", async () => {
+    btnModal.addEventListener("click", async (event) => {
+
+        event.preventDefault()
 
         const post = 
         {

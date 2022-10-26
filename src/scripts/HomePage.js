@@ -1,6 +1,6 @@
 import { getLocalStorage } from "../scripts/localStorage.js"
 import { getUsers, getPosts } from "./requestPost.js"
-import { renderHeader, renderPosts, renderButtons } from "./renderHeaderPost.js"
+import { renderHeader, renderPosts, renderButtons } from "./renderPost.js"
 import { criandoModalPost } from "./modal.js"
 import { eventCreatPost } from "./requisitionModal.js"
 import { btnEventModal } from "./btnEventModal.js"
