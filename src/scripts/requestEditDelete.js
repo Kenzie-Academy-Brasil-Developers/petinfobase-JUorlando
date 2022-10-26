@@ -23,6 +23,7 @@ export async function updatePost(body, idPost) {
 
         await renderPosts()
 
+
         return response;
     } 
   

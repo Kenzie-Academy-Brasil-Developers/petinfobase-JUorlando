@@ -20,32 +20,35 @@ const editPost = ({title, content, id}) => {
         <label class="content-label">Conteúdo do post</label>
         <input class="content" placeholder="Desenvolva aqui o conteúdo do seu post..." value="${content}" type="text" name="content">
         <button id="btn-cancel" class="button-modal-1" type="button">Cancelar</button>
-        <button id="btn-editar" type="submit">Salvar alterações</button>
+        <button id="btn-editar" class="button-modal-2" type="submit">Salvar alterações</button>
         </form>
         </div>
         </section>
     `
 
-    // const btnEdit = document.querySelector("#btn-editar")
+    const btnEdit = formulario.querySelector("#btn-editar")
 
-    // btnEdit.addEventListener("click", function () {
+    btnEdit.addEventListener("submit", function () {
 
-    //     document.querySelector("#modal-container").classList.remove("show-modal")
-    // })
+    window.location.assign("../../pages/posts/posts.html")
+    formulario.remove()
+    })
+    
+    const btnClose = formulario.querySelector("#close-modal")
+    
+    btnClose.addEventListener("click", function () {
+        
+        window.location.assign("../../pages/posts/posts.html")
+        formulario.remove()
+    })
+    
+    const btnCancel = formulario.querySelector("#btn-cancel")
 
-    // const btnClose = document.querySelector("#close-modal")
-    // console.log(btnClose)
-    // btnClose.addEventListener("click", function () {
+    btnCancel.addEventListener("click", function () {
 
-    //     document.querySelector("#modal-container").remove()
-    // })
-
-    // const btnCancel = document.querySelector("#btn-cancel")
-
-    // btnCancel.addEventListener("click", function () {
-
-    //     document.querySelector("#modal-container").classList.remove("show-modal")
-    // })
+        window.location.assign("../../pages/posts/posts.html")
+        formulario.remove()
+    })
 
     formulario.addEventListener("submit", async (event) => {
         event.preventDefault()
@@ -67,8 +70,6 @@ const editPost = ({title, content, id}) => {
 
     return formulario
 }
-
-
 
 // const deletePost = (id) => {
 //     const deleteForm = deletePostForm(id)
