@@ -54,26 +54,20 @@ export function renderPosts (elt) {
         tagAcess.innerText = "Acessar Publicação"
         tagAcess.href = ""
 
+        
         tagDiv2.append(tagTitle, tagContent, tagAcess)
         tagForm.append(tagBtnEdit, tagBtnDelete)
         tagDiv1.append(tagImg, tagName, tagData, tagForm)
         tagLi.append(tagDiv1, tagDiv2)
         tagUL.appendChild(tagLi)
-    
-        
+
     });
+
 }
 
 export function renderButtons (save, data) {
 
-    console.log(save)
-
-    console.log(data)
-
     data.forEach((element) => {
-
-        console.log(save.id)
-        console.log(element.user.id)
         
         let btnE = document.querySelector(".btn-edit")
         let btnD = document.querySelector(".btn-delete")

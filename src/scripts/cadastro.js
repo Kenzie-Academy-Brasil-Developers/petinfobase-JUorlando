@@ -5,8 +5,6 @@ const eventCadastro = () => {
     const local = document.querySelector(".div-1-section-1")
     const elements = [...local.elements]
 
-    console.log(local)
-
     local.addEventListener("submit", async (event) => {
 
         event.preventDefault()

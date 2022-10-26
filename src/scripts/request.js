@@ -28,7 +28,7 @@ async function login(body){
             setTimeout(() => {
     
                 window.location.assign("../../pages/posts/posts.html")
-            }, 2000)
+            }, 4000)
 
         } else {
 

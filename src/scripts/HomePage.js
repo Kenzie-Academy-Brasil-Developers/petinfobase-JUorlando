@@ -1,6 +1,9 @@
 import { getLocalStorage } from "../scripts/localStorage.js"
 import { getUsers, getPosts } from "./requestPost.js"
 import { renderHeader, renderPosts, renderButtons } from "./renderHeaderPost.js"
+import { criandoModalPost } from "./modal.js"
+import { eventCreatPost } from "./requisitionModal.js"
+import { btnEventModal } from "./btnEventModal.js"
 
 const save = localStorage.setItem("usersData", JSON.stringify(await getUsers()))
 
@@ -23,3 +26,9 @@ renderHeader(JSON.parse(localStorage.getItem("usersData", save)))
 renderPosts(JSON.parse(localStorage.getItem("posts", posts)))
 
 renderButtons(JSON.parse(localStorage.getItem("usersData", save)), JSON.parse(localStorage.getItem("posts", posts)))
+
+criandoModalPost()
+
+console.log(eventCreatPost())
+
+console.log( await btnEventModal())

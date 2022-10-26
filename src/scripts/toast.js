@@ -1,16 +1,16 @@
-export function toastCadastro (title, message) {
+export function toast (title, message) {
 
     const body = document.querySelector(".container")
 
     const container = document.createElement("div")
-    container.classList.add("toast-conatiner")
+    container.classList.add("toast-container")
 
     const icon = document.createElement("img")
     icon.alt = `Mensagem de ${title}`
 
-    if(title == "Sua conta foi criada com sucesso!"){
+    if(title == "Sucesso!"){
         container.classList.add("sucesstoast")
-        icon.src = "../../img/sucess.png"
+        icon.src = "../src/img/sucess.png"
     } 
 
     const textContainer = document.createElement("div")
@@ -19,7 +19,7 @@ export function toastCadastro (title, message) {
     h3.innerText = title
 
     const span = document.createElement("span")
-    span.innerHTML = `${message} <a hreaf="http://127.0.0.1:5500/index.html?">Acessar pagina de login</a>`
+    span.innerText = message
 
     textContainer.append(h3, span)
 

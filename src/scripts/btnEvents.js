@@ -1,28 +1,28 @@
-export function btnEventCadastro (){
+export function btnEventAcess (){
 
 
-    const btnCadastro = document.querySelector("#btn-cadastrar")
+    const btnAcess = document.querySelector(".button-acessar")
     
-    btnCadastro.addEventListener("click", () => {
+    btnAcess.addEventListener("click", () => {
     
-        btnCadastro.innerHTML = ""
+        btnAcess.innerHTML = ""
     
         const img = document.createElement("img")
-        img.src = "../../img/spinner.png"
+        img.src = "../../src/img/spinner.png"
         img.alt = "spinner"
         img.classList = "loading"
     
-        btnCadastro.appendChild(img)
+        btnAcess.appendChild(img)
     
-        btnSkinCadastro(btnCadastro)
+        btnSkin(btnAcess)
 
     })
 
 }
 
-btnEventCadastro()
+btnEventAcess()
 
-async function btnSkinCadastro (button){
+async function btnSkin (button){
 
     const users = await fetch("http://localhost:3333/", {
         method: "GET",
@@ -33,7 +33,7 @@ async function btnSkinCadastro (button){
     .then(res => res.json())
     .then(res => {
         button.innerHTML = ""
-        button.innerText = "Cadastrar"
+        button.innerText = "Acessar"
         
     })
  
