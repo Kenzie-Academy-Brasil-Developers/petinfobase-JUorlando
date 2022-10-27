@@ -73,10 +73,7 @@ export async function renderPosts (elt) {
 
             const formDelete = deletePostForm(element.id)
             openModal(formDelete)
-            console.log(formDelete)
         })
-
-        console.log(element)
 
         tagAcess.addEventListener("click", (event) => {
 

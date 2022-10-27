@@ -25,3 +25,11 @@ const eventLogin = () => {
 }
 
 eventLogin()
+
+const botaoDeCadastrar = document.querySelector(".button-cadastrar")
+
+botaoDeCadastrar.addEventListener("click", (event) => {
+
+    event.preventDefault()
+    window.location.assign("../../pages/login/cadastro.html")
+})
