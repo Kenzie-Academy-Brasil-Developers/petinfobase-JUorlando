@@ -1,52 +1,65 @@
 import { renderPosts } from "./renderPost.js"
-import { updatePost } from "./requestEditDelete.js"
-// import { deletePost } from "./requestEditDelete.js"
+import { updatePost, deletePost } from "./requestEditDelete.js"
 
 
-const editPost = ({title, content, id}) => {
+const editPost = ({ title, content, id }) => {
     const formulario = document.createElement("form")
     formulario.classList.add("formbase")
 
-    formulario.innerHTML =`
+    formulario.innerHTML = `
         <section id="modal-container" class="modal-container show-modal">
         <div class="big-box">
         <div class="div-modal">
         <h2 class="title-modal">Edição</h2>
         <button id="close-modal" class="close-modal" type="button">X</button>
         </div>
-        <form class="form-modal-inputs">
+        <div class="form-modal-inputs">
         <label class="label-title">Titulo do post</label>
-        <input class="title" placeholder="Digite seu titulo aqui..."  value="${title}" type="text" name="title">
+        <input class="title" placeholder="Digite seu titulo aqui..."  value="${title}" name="title">
         <label class="content-label">Conteúdo do post</label>
-        <input class="content" placeholder="Desenvolva aqui o conteúdo do seu post..." value="${content}" type="text" name="content">
+        <input class="content" placeholder="Desenvolva aqui o conteúdo do seu post..." value="${content}" name="content">
         <button id="btn-cancel" class="button-modal-1" type="button">Cancelar</button>
         <button id="btn-editar" class="button-modal-2" type="submit">Salvar alterações</button>
-        </form>
+        </div>
         </div>
         </section>
     `
 
     const btnEdit = formulario.querySelector("#btn-editar")
 
-    btnEdit.addEventListener("submit", function () {
+    btnEdit.addEventListener("click", () => {
 
-    window.location.assign("../../pages/posts/posts.html")
-    formulario.remove()
+        btnEdit.innerHTML = ""
+
+        const img = document.createElement("img")
+        img.src = "../../src/img/spinner.png"
+        img.alt = "spinner"
+        img.classList = "loading"
+
+        btnEdit.appendChild(img)
+
+        setTimeout(() => {
+
+            window.location.assign("../../pages/posts/posts.html")
+
+        }, 2000)
+
     })
-    
+
+
     const btnClose = formulario.querySelector("#close-modal")
-    
+
     btnClose.addEventListener("click", function () {
-        
-        window.location.assign("../../pages/posts/posts.html")
+
+
         formulario.remove()
     })
-    
+
     const btnCancel = formulario.querySelector("#btn-cancel")
 
     btnCancel.addEventListener("click", function () {
 
-        window.location.assign("../../pages/posts/posts.html")
+
         formulario.remove()
     })
 
@@ -57,10 +70,10 @@ const editPost = ({title, content, id}) => {
 
         const post = {}
 
-        inputs.forEach(({name, value}) => {
-          
-            if(name){
-                post[name] = value 
+        inputs.forEach(({ name, value }) => {
+
+            if (name) {
+                post[name] = value
             }
         })
 
@@ -71,45 +84,81 @@ const editPost = ({title, content, id}) => {
     return formulario
 }
 
-// const deletePost = (id) => {
-//     const deleteForm = deletePostForm(id)
-//     openModal(deleteForm)
-//   }
 
-// const deletePostForm = (id) => {
-//     const formulario = document.createElement("form")
-//     formulario.classList.add("formbase")
+const deletePostForm = (id) => {
 
-//     formulario.insertAdjacentHTML("beforeend", `
-//     <section class="modal-container-delete">
-//     <div class="big-box-delete">
-//     <div class="div-modal-delete">
-//     <h2 class="title-modal-delete">Confirmação de exclusão</h2>
-//     <button class="close-modal-delete">X</button>
-//     </div>
-//     <div class="div-text-modal-delete">
-//     <h3 class="title-delete">Tem certeza que deseja excluir esse post?</h3>
-//     <p class="text-delete">Essa ação não poderá ser desfeita, então pedimos que tenha cautela antes de concluir</p>
-//     </div>
-//     <form class="form-buttons-modal-delete">
-//     <button class="button-modal-1-delete" type="button">Cancelar</button>
-//     <button class="button-modal-2-delete" type="button">Sim, excluir o post</button>
-//     </form>
-//     </div>
-//     </section>
-//     `)
+    console.log(id)
+    const formulario = document.createElement("form")
+    formulario.classList.add("formbase")
 
-//     formulario.addEventListener("submit", async (event) => {
-//         event.preventDefault()
+    formulario.insertAdjacentHTML("beforeend", `
+    <section class="modal-container-delete show-modal">
+    <div class="big-box-delete">
+    <div class="div-modal-delete">
+    <h2 class="title-modal-delete">Confirmação de exclusão</h2>
+    <button class="close-modal-delete">X</button>
+    </div>
+    <div class="div-text-modal-delete">
+    <h3 class="title-delete">Tem certeza que deseja excluir esse post?</h3>
+    <p class="text-delete">Essa ação não poderá ser desfeita, então pedimos que tenha cautela antes de concluir</p>
+    </div>
+    <div class="form-buttons-modal-delete">
+    <button class="button-modal-1-delete" type="submit">Cancelar</button>
+    <button id="btn-excluir" class="button-modal-2-delete" type="submit">Sim, excluir o post</button>
+    </div>
+    </div>
+    </section>
+    `)
 
-//         await deletePost(id)
-//         await renderPosts()
+    const btnDelete = formulario.querySelector("#btn-excluir")
 
-//     })
+    btnDelete.addEventListener("click", () => {
 
-//     return formulario
-// }
+        btnDelete.innerHTML = ""
+
+        deletePost(id)
+
+        const img = document.createElement("img")
+        img.src = "../../src/img/spinner.png"
+        img.alt = "spinner"
+        img.classList = "loading"
+
+        btnDelete.appendChild(img)
+
+        setTimeout(() => {
+
+            window.location.assign("../../pages/posts/posts.html")
+
+        }, 2000)
+
+    })
 
 
+    const btnCloseDelete = formulario.querySelector(".close-modal-delete")
 
-export { editPost }
+    btnCloseDelete.addEventListener("click", function () {
+
+        formulario.remove()
+
+    })
+
+    const btnCancelDelete = formulario.querySelector(".button-modal-1-delete")
+
+    btnCancelDelete.addEventListener("click", function () {
+
+        formulario.remove()
+
+    })
+
+    formulario.addEventListener("submit", async (event) => {
+        event.preventDefault()
+
+        await deletePost(id)
+        await renderPosts()
+
+    })
+
+    return formulario
+}
+
+export { editPost, deletePostForm }

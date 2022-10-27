@@ -160,6 +160,9 @@
     width: 95%;
     height: 48px;
     color: var(--gray300);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .display-none{

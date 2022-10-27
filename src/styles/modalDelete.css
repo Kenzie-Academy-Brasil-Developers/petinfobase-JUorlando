@@ -50,15 +50,11 @@
 
 .div-text-modal-delete{
     width: 744px;
-    height: 275px;
+    height: 105px;
     display: flex;
     flex-direction: column;
     gap: 11px;
 }
-
-.title-delete{}
-
-.text-delete{}
 
 .form-buttons-modal-delete{
     width: 100%;
@@ -80,7 +76,7 @@
 }
 
 .button-modal-2-delete{
-    width: 105px;
+    width: 157px;
     height: 38px;
     background-color: var(--alert100);
     color: var(--gray900);
