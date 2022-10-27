@@ -1,5 +1,5 @@
 import { renderPosts } from "./renderPost.js"
-import { updatePost, deletePost } from "./requestEditDelete.js"
+import { updatePost, deletePost, acessPost } from "./requestEditDelete.js"
 
 
 const editPost = ({ title, content, id }) => {
@@ -161,4 +161,53 @@ const deletePostForm = (id) => {
     return formulario
 }
 
-export { editPost, deletePostForm }
+const acessPostForm = ({ user, createdAt, title, content, id }) => {
+    const formulario = document.createElement("form")
+    formulario.classList.add("formbase")
+
+    formulario.innerHTML = `
+        <section id="modal-container" class="modal-container show-modal">
+        <div class="big-box-acess">
+        <div class="div-modal-acess">
+        <img class="img-acess" src="${user.avatar}">
+        <h2 class="title-modal-acess">${user.username}</h2>
+        <p class="data-acess">${createdAt}</p>
+        <button id="close-acess" class="close-modal" type="button">X</button>
+        </div>
+        <div class="form-modal-inputs-acess">
+        <h2 id="h2-acess">${title}</h2>
+        <p id="p-acess">${content}</p>
+        </div>
+        </section>
+    `
+
+    const btnClose = formulario.querySelector("#close-acess")
+
+    btnClose.addEventListener("click", function () {
+
+
+        formulario.remove()
+    })
+
+    formulario.addEventListener("submit", async (event) => {
+        event.preventDefault()
+
+        const inputs = [...event.target]
+
+        const post = {}
+
+        inputs.forEach(({ name, value }) => {
+
+            if (name) {
+                post[name] = value
+            }
+        })
+
+        await acessPost(post, id)
+        await renderPosts()
+    })
+
+    return formulario
+}
+
+export { editPost, deletePostForm, acessPostForm }

@@ -69,3 +69,22 @@ export async function deletePost(idPost) {
     console.log(err);
   }
 }
+
+export async function acessPost(body, idPost) {
+
+  const localStorage = getLocalStorage();
+
+  try {
+    const request = await fetch(baseUrl + "posts/" + idPost, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${localStorage.token}`,
+      },
+      body: JSON.stringify(body),
+    });
+
+  } catch (err) {
+    console.log(err);
+  }
+}

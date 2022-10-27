@@ -1,5 +1,6 @@
-import { deletePostForm, editPost } from "./FormEditDelete.js";
+import { deletePostForm, editPost, acessPostForm } from "./FormEditDelete.js";
 import { openModal } from "./modalEditDelete.js";
+import { acessPost } from "./requestEditDelete.js";
 
 export function renderHeader (elt) {
 
@@ -73,6 +74,16 @@ export async function renderPosts (elt) {
             const formDelete = deletePostForm(element.id)
             openModal(formDelete)
             console.log(formDelete)
+        })
+
+        console.log(element)
+
+        tagAcess.addEventListener("click", (event) => {
+
+            event.preventDefault()
+
+            const formAcess = acessPostForm(element)
+            openModal(formAcess)
         })
         
         tagDiv2.append(tagTitle, tagContent, tagAcess)
