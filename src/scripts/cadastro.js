@@ -24,3 +24,19 @@ const eventCadastro = () => {
 }
 
 eventCadastro()
+
+const buttonBack = document.querySelector(".button-back")
+
+buttonBack.addEventListener("click", (event) => {
+
+    event.preventDefault()
+    window.location.assign("../../index.html")
+})
+
+const buttonBackBottom = document.querySelector(".button-back-bottom")
+
+buttonBackBottom.addEventListener("click", (event) => {
+
+    event.preventDefault()
+    window.location.assign("../../index.html")
+})
