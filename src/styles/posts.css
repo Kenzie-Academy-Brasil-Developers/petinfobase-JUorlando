@@ -41,6 +41,28 @@
     width: 41px;
     height: 41px;
     border-radius: 50%;
+    cursor: pointer;
+}
+
+.img-perfil:hover + .button-logout{
+    opacity: 1;
+}
+
+.button-logout{
+    background-image: url(../img/buttonsair.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    width: 150px;
+    height: 28px;
+    position: relative;
+    left: 380px;
+    border: none;
+    opacity: 0;
+}
+
+.button-logout:hover{
+    opacity: 1;
 }
 
 .app{
